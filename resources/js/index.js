@@ -82,3 +82,14 @@ sendButton.addEventListener("click", function(sendButtonClickEvent) {
   sendMessages(sender,message);
   myMessage.value = "";
 });
+
+// This is for Storage
+// Disable the message input until a name is provided and saved to the localStorage.
+if (nameInput === true) { return
+    localStorage.setItem(username);
+} else {
+    // this message displays only if x is less than 10.
+    alert ("You must put in a Username!");
+}
+
+
