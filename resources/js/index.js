@@ -85,6 +85,15 @@ sendButton.addEventListener("click", function(sendButtonClickEvent) {
 
 // This is for Storage
 // Disable the message input until a name is provided and saved to the localStorage.
+const Username = document.getElementById('Username');
+
+// ✅ Set required attribute
+Username.setAttribute('required');
+
+// ✅ Remove required attribute
+// input.removeAttribute('required');
+
+
 if (nameInput === true) { return
     localStorage.setItem(username);
 } else {
