@@ -83,22 +83,32 @@ sendButton.addEventListener("click", function(sendButtonClickEvent) {
   myMessage.value = "";
 });
 
-// This is for Storage
-// Disable the message input until a name is provided and saved to the localStorage.
-const Username = document.getElementById('Username');
+let my_name_input = this.my_name_input.value;
+ localStorage.setItem('Name', JSON.stringify([localStorage.Name]));
 
-// ✅ Set required attribute
-Username.setAttribute('required');
-
-// ✅ Remove required attribute
-// input.removeAttribute('required');
-
-
-if (nameInput === true) { return
-    localStorage.setItem(username);
-} else {
-    // this message displays only if x is less than 10.
-    alert ("You must put in a Username!");
-}
-
-
+// Dark Mode Start
+function isDark() {
+    return localStorage.getItem("dark-mode");
+  }
+  
+  function toggleRootClass() {
+    document.querySelector(":root").classList.toggle("dark");
+  }
+  
+  function toggleLocalStorageItem() {
+    if (isDark()) {
+      localStorage.removeItem("dark-mode");
+    } else {
+      localStorage.setItem("dark-mode", "set");
+    }
+  }
+  
+  if (isDark()) {
+    toggleRootClass();
+  }
+  
+  document.querySelector(".theme-icon").addEventListener("click", () => {
+    toggleLocalStorageItem();
+    toggleRootClass();
+  });
+//Dark Mode End
