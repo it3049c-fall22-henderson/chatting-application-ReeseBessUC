@@ -1,0 +1,89 @@
+:root:not(.dark) {
+  --background-color: #f8f9fa;
+  --primary-color: #dee2e6;
+  --font-color: #212529;
+  --secondary-font-color: #495057;
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+:root.dark {
+    
+    --background-color: #044965;
+  --primary-color: #05668d;
+  --font-color: white;
+  --secondary-font-color: rgba(226, 232, 240, 1);
+  
+  
+  
+}
+
+.theme-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  box-shadow: var(--box-shadow);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-color: rgba(226, 232, 240, 0);
+  background-color: #7b706a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+:root.dark .theme-icon {
+    background: #fff;
+}
+
+:root:not(.dark) .theme-icon .fa-sun {
+  display: none;
+}
+
+:root:not(.dark) .theme-icon .fa-moon {
+  display: inline-block;
+  color: white;
+  background: #7b706a;
+}
+
+:root.dark .theme-icon .fa-sun {
+  display: inline-block;
+}
+
+:root.dark .theme-icon .fa-moon {
+  display: none;
+}
+
+.sr-only {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.theme-icon {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+:root.dark .jumbotron {
+    background: #2B2725;
+    color:#fff;
+}
+
+:root.dark body {
+    background: #7b706a;
+    color:#fff;
+}
+
+
+:root.dark .yours .message::after,
+:root.dark .mine .message::after {
+    background: #7b706a;	
+}
+
+:root.dark .yours .message,
+:root.dark .sender-info {
+    color:#000;
+}
