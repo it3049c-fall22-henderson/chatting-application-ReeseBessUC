@@ -1,8 +1,6 @@
-// Setp 1 and 2//
 const nameInput = document.getElementById("my-name-input");
 const myMessage = document.getElementById("my-message");
 const sendButton = document.getElementById("send-button");
-const updateButton = document.getElementById("my-name-save");
 const chatBox = document.getElementById("chat");
 const serverURL = `https://it3049c-chat-application.herokuapp.com/messages`;
 
@@ -79,82 +77,42 @@ function sendMessages(username, text) {
 sendButton.addEventListener("click", function(sendButtonClickEvent) {
   sendButtonClickEvent.preventDefault();
   const sender = nameInput.value;
-  
-  if (sender == "")
-  {
-    alert("You must specify name");
-    return;
-  }
-  
   const message = myMessage.value;
 
   sendMessages(sender,message);
   myMessage.value = "";
 });
 
-updateButton.addEventListener("click", function(e) {
-  e.preventDefault();
-  const sender = nameInput.value;
-  
-  if (sender == "")
-  {
-    alert("You must specify name");
-    return;
-  }
-  
-  localStorage.setItem("fs_username", sender);
-  document.getElementById("my-message").disabled = false;
-  document.getElementById("send-button").disabled = false;
-            
-  alert("Name updated");
-  
-  
-});
-
-document.addEventListener( 'DOMContentLoaded', function(){
-        checkNameInLocalStorage();
-        
-},false );
-
-function checkNameInLocalStorage() {
+jQuery(document).ready(function(){
     let name_local =  localStorage.getItem("fs_username");
     
     if (name_local === null)
     {
-        document.getElementById("my-message").disabled = true;
-        document.getElementById("send-button").disabled = true;
-
+        jQuery('#my-message').prop('disabled', true);
+        jQuery('#send-button').prop('disabled', true);
     }
     else
     {
-        document.getElementById("my-name-input").value = name_local;;
+        jQuery('#my-name-input').val(name_local);
     }
-}
-
-
-// Dark Mode Start
-function isDark() {
-    return localStorage.getItem("dark-mode");
-  }
-  
-  function toggleRootClass() {
-    document.querySelector(":root").classList.toggle("dark");
-  }
-  
-  function toggleLocalStorageItem() {
-    if (isDark()) {
-      localStorage.removeItem("dark-mode");
-    } else {
-      localStorage.setItem("dark-mode", "set");
-    }
-  }
-  
-  if (isDark()) {
-    toggleRootClass();
-  }
-  
-  document.querySelector(".theme-icon").addEventListener("click", () => {
-    toggleLocalStorageItem();
-    toggleRootClass();
-  });
-//Dark Mode End
+    
+    
+    jQuery('#my-name-save').on('click', function(){
+        let name = jQuery('#my-name-input').val();
+        
+        if (name == "")
+        {
+            alert("You must specify name");
+        }
+        else
+        {
+            localStorage.setItem("fs_username", name);
+            jQuery('#my-message').prop('disabled', false);
+            jQuery('#send-button').prop('disabled', false);
+            
+            alert("Name updated");
+            
+        }
+    })
+    
+});
