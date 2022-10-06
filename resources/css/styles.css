@@ -168,7 +168,7 @@ footer {
   touch-action: manipulation;
 }
 
-/* This is the dark mode css */
+/* This is the start of the dark mode*/
 :root:not(.dark) {
   --background-color: #f8f9fa;
   --primary-color: #dee2e6;
