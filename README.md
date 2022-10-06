@@ -14,7 +14,12 @@ how many points out of 20 do you deserve on this assignment:
 
 ## Self-Reflection:
 <!-- Write your self-reflection under this line -->
-This is my favorite one so far!! This was most likley one of the harder concepts for me to understand and had to go online a little bit to find some tips but I think I managed it well.
+I understood this assignemnt very well, I think this is my favorite one so far!! I really enjoyed it and I would love to
+actually code a chatting platform for my friends and I. I am very happy about this!
 
 ### How long it took me to finish this?
-span of 5 days with gradual work everyday
+2 days
+
+## Discussion Questions:
+1. What does the bootstrap `display-4` class do?
+It is a bootstrap class 
